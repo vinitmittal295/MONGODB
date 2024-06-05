@@ -3,7 +3,7 @@ db.users.find()
 db.collectionname.find()
 
 1)
-db.users.find().count()
+db.users.find().count() 
 db.collectionname.find().count()
 
 2)
@@ -38,3 +38,18 @@ Retrieve all documents where the user's last name is "Sharma" and the role is "c
 
 12)
 dn.users.find({city:"jaipur}).limit(1)
+
+
+13) users have java and Python
+ db.users.find({skills:{$all:["Java","Python"]}}
+ 
+ )
+ 14) aryan or gupta
+ db.users.find({$or:[{firstName:"Aryan"},{lastNmae:"Gupta"}]})
+ 15
+ kolkata or Female
+ db.users.find({$or:[{city:"Kolkata"},{gender:"Feamle"}]})
+
+
+
+ db.users.find({$or:[{city:"Kolkata"},{gender":"Female}]})
