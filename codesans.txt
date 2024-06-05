@@ -1,0 +1,40 @@
+to show alll the document in mongodb 
+db.users.find()
+db.collectionname.find()
+
+1)
+db.users.find().count()
+db.collectionname.find().count()
+
+2)
+db.users.find({role:"customer", lastName:"Verma"})
+
+3)Retrieve all documents where the role is "admin".
+db.users.find({role:"admin"})
+
+4)Retrieve the document with the username "Sumanth Rao".
+db.users.find({username:"Sumanth Rao"})
+
+6)Retrieve all documents where the user has the skill "Python".
+db.users.find({skills:"Python"})
+
+7
+
+
+7)
+ db.users.find({role:"admin", gender:"Male"})
+
+
+ 8)
+  db.users.find({city:"Jaipur", gender:"Female"})
+9) Find all documents where the user has exactly three skills.
+ db.users.find({city:"Kolkata", gender:"Female",role:"admin"})
+10)
+Retrieve all documents where the user's last name is "Sharma" and the role is "customer".
+ db.users.find({role:"customer", lastName:"Sharma"})
+
+ 11)Retrieve all documents where the user's first name is "Aryan" or the last name is "Gupta".
+ db.users.find({firstName:"Aryan", lastName:"Gupta"})
+
+12)
+dn.users.find({city:"jaipur}).limit(1)

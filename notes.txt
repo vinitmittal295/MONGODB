@@ -1,0 +1,47 @@
+js me jo object hota h vo mongo db mein document hota hota
+js me jo array of object hota h vo mongodb me collection of document 
+js me jo key hota h vhi mongodb field or attributes hota h
+js me jo value hota h vhi mongodb mein value hota h 
+js me jo data structure hoti h vo yaha database bnegi
+js me jo functin hoti h vo yha query hoti h
+file system mein jo  parent folder name h vo mongodb ki terms me database khlati h 
+parent folder ke andr jo subfolder hogi vo mongodb k terms mein collection =array of obkect
+subfolder mein k andr jo files hogi vo mongodb ke terms main documents khlati hogi
+file system me jo file name hota h vo mongodb ke terms me fields name hota h 
+file system me jo data hota haui vo mongodb me vo value hota h
+file system me jo function hoti h vo mongodb mein query hoti h 
+jab bhi me database me ek naya database bnta h to vo kuch empty pa rent folder jesa bnta h
+empty parent folder mongodb allowed nhi hota h that means empty databse is not allowed in mongodb
+iska matlb kam se kam ek collection /subfolder hona chahiye
+subfolder ho skta h lekin parent folder empty ho nhi skta
+matlb empty collection is allowed but empty database is not allowed..
+
+
+collection/subfolder/array of object inka name singular nhi ho skta h ye hmesha plural form mein hi honge
+example users, messeges 
+
+what is cluster -- group of databases
+
+
+use command-to swithch databse
+db.collection-name.find()-databse ko  find krne k liye
+db.pooja.find()
+
+
+show dbs--sare database show kr dega
+
+use dbs---trmporary usme switch ho jayega
+use pooja --isse pooja me switch ho jayega
+
+show collections---us database k andr jo bhi subfolder h usi ko show krega
+db.createCollection(collectionname)
+db,createCollection(pooja)--subfolder bna dega
+
+
+db.collectionname.insertOne({key:value})
+db.collectionname.insertOne({"kiran":"kiran@gmail.com})
+db.collectionname.insertMany(array of objects)
+
+
+db.collectionname.drop()----users vale subfolder ko delete krne k liye --
+--isse reactnodebatchi vala database delete ho jayega whole database
