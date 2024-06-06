@@ -1,0 +1,114 @@
+to show alll the document in mongodb 
+db.users.find()
+db.collectionname.find()
+
+1)
+db.users.find().count() 
+db.collectionname.find().count()
+
+2)
+db.users.find({role:"customer", lastName:"Verma"})
+
+3)Retrieve all documents where the role is "admin".
+db.users.find({role:"admin"})
+
+4)Retrieve the document with the username "Sumanth Rao".
+db.users.find({username:"Sumanth Rao"})
+
+6)Retrieve all documents where the user has the skill "Python".
+db.users.find({skills:"Python"})
+
+7) admin and male
+ db.users.find({role:"admin", gender:"Male"})
+
+
+ 8)jaipur and Female
+  db.users.find({city:"Jaipur", gender:"Female"})
+9) Find all documents where the user has exactly three skills.
+ db.users.find({city:"Kolkata", gender:"Female",role:"admin"})
+10)
+Retrieve all documents where the user's last name is "Sharma" and the role is "customer".
+ db.users.find({role:"customer", lastName:"Sharma"})
+
+ 11)Retrieve all documents where the user's first name is "Aryan" or the last name is "Gupta".
+ db.users.find({firstName:"Aryan", lastName:"Gupta"})
+
+12)
+dn.users.find({city:"jaipur}).limit(1)
+
+
+13) users have java and Python
+ db.users.find({skills:{$all:["Java","Python"]}}
+ 
+ )
+ 14) aryan or gupta
+ db.users.find({$or:[{firstName:"Aryan"},{lastNmae:"Gupta"}]})
+ 15
+ kolkata or Female
+ db.users.find({$or:[{city:"Kolkata"},{gender":"Female}]})
+
+
+ 17)has the skill java but dont have Python
+ db.users.find({skills:"Java", skills:{$ne:"Python"}})
+
+ 18)
+  react but not java (jinme java nhi ho )
+ db.users.find({$and:[{skills:"React"},{skills:{$ne:"Java"}}]})
+19)
+has exactly three skills
+
+  db.users.find({skills:{$size:3}})
+20) firstname starts with s and role is admin
+db.users.find({firstName:/^S/,role:"admin"})
+21) 
+
+Retrieve all documents where the user's role is not specified.
+db.users.find({role:{$exists:false}})
+kyunki mongodb schme flexible to isme ye jruri nhi h ki 2 object me same
+ field of information ho matlb ek object me sirf email name hai to mongodb
+  and agar no field of information ho to bhi valid consider kregi the at that 
+  moment bhut sari data hobne k karan terms
+  yeh smjh pana possiboe nhi hota h ki sab me same field of information
+   h ya nhi to iske liye dollar  specified krte h 
+
+
+to know whether particular key exist or not 
+22) at least four skills
+atleast==(greater than equal)
+atmost==(less than equals)
+mathematical operator
+
+$gt $gte $lt $lte $ne $eq
+
+db.users.find({skills:{$gte:3}})
+
+db.users.find()
+23) Retrieve all documents where the user's role is "customer" and the user has no specified skills.
+db.users.find({role:"customer",skills:{$exists:true}})
+
+24)
+bich vale m se start kre tb
+db.users.find({useremail:/regexsoftware.com/})
+
+
+last vale k liye
+db.users.find({useremail:/.com$/})
+db.users.find({username:/a$/})
+
+25)Retrieve all documents where the user's email does not contain "gmail.com".
+db.users.find({useremail:{$not:/gmail.com$/}})
+27)
+Find all documents where the user'
+s last name is not "Singh".
+db.users.find({lastName:{$not:/Singh$/}})
+
+28) Find all male users in Delhi who are above age 26
+
+db.users.find({city:"New Delhi", age:{$gte:26}})
+29) How many Male users are there in Delhi who have skills Java?
+
+db.users.find({city:"jaipur", skills:"Java",gender:"Male"})
+db.users.find({city:"New Delhi", age:{$gt:24},skills:["Python","C++"]}).count()
+
+
+db.
