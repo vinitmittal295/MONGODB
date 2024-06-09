@@ -24,7 +24,7 @@ db.users.find({skills:"Python"})
 
  8)jaipur and Female
   db.users.find({city:"Jaipur", gender:"Female"})
-9) Find all documents where the user has exactly three skills.
+9) Find all documents city kolkata , gender male , role admin
  db.users.find({city:"Kolkata", gender:"Female",role:"admin"})
 10)
 Retrieve all documents where the user's last name is "Sharma" and the role is "customer".
@@ -90,7 +90,6 @@ db.users.find({role:"customer",skills:{$exists:true}})
 bich vale m se start kre tb
 db.users.find({useremail:/regexsoftware.com/})
 
-
 last vale k liye
 db.users.find({useremail:/.com$/})
 db.users.find({username:/a$/})
@@ -108,7 +107,7 @@ db.users.find({city:"New Delhi", age:{$gte:26}})
 29) How many Male users are there in Delhi who have skills Java?
 
 db.users.find({city:"jaipur", skills:"Java",gender:"Male"})
+30) city delhi and age is greater 24 and skills is Python and java
 db.users.find({city:"New Delhi", age:{$gt:24},skills:["Python","C++"]}).count()
 
 
-db.
