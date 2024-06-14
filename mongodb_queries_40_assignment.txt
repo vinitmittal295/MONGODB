@@ -109,5 +109,12 @@ db.users.find({city:"New Delhi", age:{$gte:26}})
 db.users.find({city:"jaipur", skills:"Java",gender:"Male"})
 30) city delhi and age is greater 24 and skills is Python and java
 db.users.find({city:"New Delhi", age:{$gt:24},skills:["Python","C++"]}).count()
+31) has atleast four skills
+matlb 4 or 4 se jyada
+db.users.find({$expr:{$gte:[{$size:"$skills"},4]}})
+next method
 
+db.users.find({"skills.3":{$exists:true}})
 
+32) role admin and skills at least 3 
+db.users.find({role:"admin","skills.2":{$exists:true}})
