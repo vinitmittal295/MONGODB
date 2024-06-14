@@ -1,0 +1,95 @@
+1)Find all products in the "Food" category.
+db.ones.find({category:"Food"})
+
+2)Find all products with a rating of 4.7 or higher.
+db.ones.find({rating:{$gte:4.7}})
+
+3)Find all products where the new price is less than $5.00.
+db.ones.find({new_price:{$lt:5.00}})
+
+4)Find all products that are available in "Blue" color.
+Ecomercenew> db.ones.find({colors:"Blue"})
+
+5)Find all products in the "Electronics" category with a rating of 4.8.
+db.ones.find({category:"Electronics",rating:4.8})
+
+6)Find all products that have a quantity greater than 100.
+db.ones.find({product_qty:{$gt:100}})
+
+7)Find all products with an old price greater than $50.00.
+db.ones.find({old_price:{$gt:50}})
+
+8)Find all products in the "Health" category.
+db.ones.find({category:"Health"})
+
+9)Find all products with a "sub_category" of "Snacks".
+db.ones.find({sub_category:"Snacks"})
+
+10) Find all products that have a discount of more than $10.00 (difference between old and new price).
+
+11) Find all products with a rating less than 4.5
+db.ones.find({rating:{$lte:4.5}})
+
+12)Find all products that are available in "Red" color.
+db.ones.find({colors:"Red"})
+
+13)Find all products in the "Fruits" sub-category.
+db.ones.find({sub_category:"Fruits"})
+
+14)Find all products with a "product_qty" less than 30.
+db.ones.find({product_qty:{$lt:30}})
+
+15)Find all products where the old price is between $50.00 and $100.00
+db.ones.find({old_price:{$lt:100,$gt:50}})
+
+16)Find all products in the "Smartphones" sub-category.
+db.ones.find({sub_category:"Smartphones"})
+
+17)Find all products with a new price greater than $1000.00.
+db.ones.find({new_price:{$lt:1000}})
+
+18)Find all products that are available in multiple colors.
+
+
+19)Find all products with the word "shampoo" in their description.
+doubt
+db.users.find({name:/shampoo/})
+
+20) Find all products that have a rating between 4.4 and 4.6 inclusive.
+db.ones.find({rating:{$lt:4.6,$gt:4.4}})
+
+
+21) Find all products with a name containing the word "Pro".
+doubt
+db.users.find({name:/Pro/})
+
+22)Find all products that have a "sub_category" of "Hair Care".
+db.ones.find({sub_category:"Hair Care"})
+
+23) Find all products in the "Dairy" sub-category.
+db.ones.find({sub_category:"Dairy"})
+
+24) Find all products where the new price is exactly $1.00.
+db.ones.find({new_price:1})
+
+25)Find all products with a "sub_category" of "Oral Care".
+db.ones.find({sub_category:"Oral Care"})
+
+26)Find all products with a rating of 4.9.
+db.ones.find({rating:4.9})
+
+27)Find all products that are available in both "Black" and "Silver" colors.
+db.ones.find({colors:{$all:["Black","Silver"]}})
+
+28)Find all products in the "Beverages" sub-category.
+db.ones.find({sub_category:"Beverages"})
+
+29)Find all products that have more than 3 colors available.
+doubt
+db.ones.find({colors:{$gte:3}})
+
+30)Find all products with a name starting with the letter "L"
+db.users.find({name:/^L/})
+
+
+
