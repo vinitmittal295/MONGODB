@@ -1,0 +1,100 @@
+1)Find all female users from Jaipur who know Python.
+db.users.aggregate(
+[
+  {
+    $match: {
+      gender:"Female",
+      city:"Jaipur",
+      skills:"Python"
+    }
+  }
+]
+)
+
+2)Find all male users in Delhi who are above age 2
+db.users.aggregate(
+[
+    {
+      $match: {
+        city:"New Delhi",
+        gender:"Male",
+        age:{$gt:26}
+      }
+    }
+  ]
+)
+3) Find all users who are from either New Delhi or Mumbai.
+$in:more than one true
+db.users.aggregate(
+[
+    {
+      $match: {
+        city:{$in:["New Delhi","Mumbai"]}
+      }
+    }
+  ]
+)
+
+4)Find all users who have the same last name.
+5)Find the count of users in each city.
+
+6)How many users are from New Delhi?
+[
+    {
+      $match: {
+        city:"New Delhi"
+      }
+    },
+    {
+      $count: 'vinit'
+    }
+  ]
+7)How many Female users are from Jaipur?
+
+[
+    {
+      $match: {
+        city:"Jaipur"
+      }
+    },
+    {
+      $count: 'countofjaipur'
+    }
+  ]
+
+  8)How many Male users are there in Delhi who have skills Java?
+  db.users.aggregate(
+  [
+    {
+      $match: {
+        city:"Jaipur",
+        gender:"Male",
+        skills:"Java"
+        
+      }
+    },
+    {
+      $count: 'v'
+    }
+  ]
+)
+9)How many users are from Hyderabad having age greater than 24 and have skill Python,C++
+db.users.aggregate(
+    [
+        {
+          $match: {
+            city:"Hyderabad",
+            age:{$gt:24},
+            skills:{$all:["Java","C++"]}
+            
+          }
+        },
+        {
+          $count: 'v'
+        }
+      ]
+)
+
+
+//group can be done on the basis of amy key
+document on thr basis of skills,age, 

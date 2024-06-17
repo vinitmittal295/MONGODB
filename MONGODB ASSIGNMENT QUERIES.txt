@@ -86,7 +86,7 @@ db.ones.find({sub_category:"Beverages"})
 
 29)Find all products that have more than 3 colors available.
 doubt
-db.ones.find({colors:{$gte:3}})
+db.ones.find({"colors:2":{$exits:true}})
 
 30)Find all products with a name starting with the letter "L"
 db.users.find({name:/^L/})
