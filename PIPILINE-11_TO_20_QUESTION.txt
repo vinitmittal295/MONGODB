@@ -16,7 +16,7 @@
   {
     $project: {
       city:"$_id",
-      averageskills:1
+      averageskills:1		
     }
   }
 ]

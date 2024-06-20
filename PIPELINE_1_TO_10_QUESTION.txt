@@ -109,7 +109,7 @@ unwind ka use krenge array ko todne k liye
   {
     $group:{
       _id:"$role",
-      v:{$addToSet:"$city"}
+      uniquecitygroup:{$addToSet:"$city"}
     }
   },
   {

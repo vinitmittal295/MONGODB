@@ -1,15 +1,201 @@
 1. Group users by age and calculate the average salary for each age group.
+[
+  {
+    $group:{
+      _id:"$age",
+      averagesal:{$avg:"$salary"}
+      
+    }
+  }
+]
 2. Group users by city and find the user with the highest number of skills in each city.
+may be in doubt
+[
+  {
+    $project:{
+      city:1,
+      numberofneachcity:{$size:"$skills"}
+    }
+  },
+  {
+    $group:{
+      _id:"$city",
+      max:{$max:"$numberofneachcity"}
+    }
+  }
+
+]
+
 3. Group users by role and determine the average age for each role.
+[
+  {
+    $group:{
+      _id:"$role",
+      averageage:{$avg:"$age"}
+      
+    }
+  }
+]
 4. Group users by skills and calculate the average salary for users with each skill.
+[
+  {
+    $unwind:"$skills",
+  },
+  {
+    $group:{
+      _id:"$skills",
+      averagesal:{$avg:"$salary"}
+    }
+  },
+  {
+    $project:{
+      skills:"$_id",
+      averagesal:1
+      
+    }
+  }
+]
+
 5. Group users by gender and role, and find the total number of users in each subgroup.
+[
+  {
+    $group:{
+      _id:{gender:"$gender",role:"$role"},
+      totaluser:{$sum:1}
+      
+    }
+  }
+]
 6. Group users by city and determine the total number of users in each city.
+[
+  {
+    $group:{
+      _id:"$city",
+      totaluser:{$sum:1}
+      
+    }
+  }
+]
 7. Group users by role and calculate the average number of skills per user in each role.
+[
+  {
+    $project:{
+      role:1,
+      totalskills:{$size:"$skills"}
+    }
+  },
+  {
+    $group:{
+      _id:"$role",
+      averageskills:{$avg:"$totalskills"}
+    }
+  },
+  {
+    $project:{
+      _id:"$role",
+      averageskills:1
+    }
+  }
+]
+
 8. Group users by gender and find the average salary for each gender.
+[
+  {
+    $group:{
+      _id:"$gender",
+      totaluser:{$avg:"$salary"}
+      
+    }
+  }
+]
 9. Group users by city and role, and calculate the average age for users in each subgroup.
+[
+  {
+    $group:{
+      _id:{city:"$city",role:"$role"},
+      averageage:{$avg:"$age"}
+      
+    }
+  }
+]
 10. Group users by age and find the user with the highest salary in each age group.
+[
+  {
+    $group:{
+      _id:"$age",
+      hughest:{$max:"$salary"}
+      
+    }
+  }
+]
 11. Group users by role and determine the total number of users in each role.
+[
+  {
+    $group:{
+      _id:"$role",
+      totalnouser:{$sum:1}
+      
+    }
+  }
+]
 12. Group users by gender and calculate the average number of skills per user in each gender.
+[
+  {
+    $project:{
+      gender:1,
+      numberofskillineachcity:{$size:"$skills"}
+    }
+  },
+  {
+    $group:{
+      _id:"$gender",
+      averageskill:{$avg:"$numberofskillineachcity"}
+    }
+  },
+  
+    {
+    $project:{
+      city:"$_id",
+      averageskill:1,
+    }
+    }
+]
 13. Group users by city and find the highest and lowest salaries for each city.
+[
+  {
+    $group:{
+      _id:"$city",
+      highest:{$max:"$salary"},
+      minimum:{$min:"$salary"},
+    }
+  }
+]
 14. Group users by role and age, and calculate the average salary for each subgroup.
+[
+  {
+    $group:{
+      _id:{city:"$city",role:"$role"},
+      averageage:{$avg:"$salary"}
+      
+    }
+  }
+]
 15. Group users by skills and determine the average age for users with each skill.
+[
+  {
+    $unwind:"$skills",
+  },
+  {
+    $group:{
+      _id:"$skills",
+      averageage:{$avg:"$age"}
+    }
+  },		
+  {
+
+    $project:{
+      skills:"$_id",
+      averageage:1
+    }
+  }
+]
