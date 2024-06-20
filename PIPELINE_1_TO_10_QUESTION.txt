@@ -6,14 +6,14 @@
       _id: "$role",
       vinit:{$avg:"$salary"}
     }
-  }
+  } 
 ]
 2)2. Group users by city and find the total number of users in each city.
 [
     {
       $group: {
         _id: "$city",
-        vinit:{$sum:1}
+        totalnoofcity:{$sum:1}
       }
     }
   ]
@@ -27,7 +27,7 @@
       }
     }
   ]
-
+new question
   [
   {
     $group: {
@@ -42,7 +42,7 @@
   {
     $group: {
       _id: {role:"$role",city:"$city"},
-      sumof:{$sum:"$salary"}
+      totalsalary:{$sum:"$salary"}
     }
   }
 ]

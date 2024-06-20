@@ -96,5 +96,5 @@ db.users.aggregate(
 )
 
 
-//group can be done on the basis of amy key
-document on thr basis of skills,age, 
+//group can be done on the basis of any key
+document on the basis of skills,age, 
